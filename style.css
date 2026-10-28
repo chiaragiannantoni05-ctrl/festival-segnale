@@ -3,12 +3,12 @@
 
 /* Scelte comuni: ogni regola usa var() per richiamarne il valore. */
 :root {
-  --colore-primario: #245c49;
-  --colore-primario-scuro: #173f32;
+  --colore-primario: #b0102f;
+  --colore-primario-scuro: #7a0c20;
   --colore-sfondo: #f5f2e9;
   --colore-testo: #202923;
-  --font-testo: Arial, Helvetica, sans-serif;
-  --font-titoli: Georgia, "Times New Roman", serif;
+  --font-testo: Tahoma, Helvetica, sans-serif;
+  --font-titoli: Futura, "Times New Roman", serif;
 }
 
 * {
@@ -159,7 +159,7 @@ h3 {
 .event-grid {
   display: grid;
   grid-template-columns: 1fr;
-  gap: 1.5rem;
+  gap: 2rem;
 }
 
 .event-card {
@@ -176,7 +176,7 @@ h3 {
 }
 
 .event-body {
-  padding: 1.25rem;
+  padding: 1.5rem;
 }
 
 .event-body p:last-child {
