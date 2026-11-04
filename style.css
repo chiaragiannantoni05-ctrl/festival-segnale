@@ -220,3 +220,84 @@ h3 {
     grid-template-columns: repeat(3, 1fr);
   }
 }
+/*inserimento swiper e immagini*/
+
+.venue-slide {
+  display: flex;
+  flex-direction: column;
+  height: auto;
+}
+
+.venue-slide img {
+  display: block;
+  width: 100%;
+  height: auto;
+  border-radius: 0.75rem;
+  margin-bottom: 1.5rem;
+}
+
+.venue-info {
+  padding: 0;
+}
+
+.venue-info h3 {
+  margin-top: 0;
+  margin-bottom: 0.75rem;
+}
+
+.venue-description {
+  max-width: 65ch;
+  margin-bottom: 0;
+}
+
+/* Personalizzazione Swiper per info.html */
+.swiper {
+  padding: 1.5rem 0 4rem;
+  overflow: visible;
+}
+
+.swiper-button-next,
+.swiper-button-prev {
+  top: auto;
+  bottom: -2.5rem;
+  width: 2.5rem;
+  height: 2.5rem;
+  background: var(--colore-primario);
+  border-radius: 50%;
+  color: #ffffff;
+}
+
+.swiper-button-next::after,
+.swiper-button-prev::after {
+  font-size: 1.25rem;
+}
+
+.swiper-button-prev {
+  left: 0;
+  right: auto;
+}
+
+.swiper-button-next {
+  right: 0;
+  left: auto;
+}
+
+.swiper-button-next:hover,
+.swiper-button-prev:hover {
+  background: var(--colore-primario-scuro);
+}
+
+.swiper-pagination {
+  position: relative;
+  margin-top: 3rem;
+}
+
+.swiper-pagination-bullet {
+  background: var(--colore-primario);
+  opacity: 0.5;
+}
+
+.swiper-pagination-bullet-active {
+  background: var(--colore-primario);
+  opacity: 1;
+}
