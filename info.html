@@ -3,9 +3,9 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Info e luoghi — Segnale</title>
-    <link rel="stylesheet" href="style.css">
+    <title>Come arrivare — Segnale</title>
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@14.4.0/swiper-bundle.min.css">
+    <link rel="stylesheet" href="style.css">
 </head>
 <body>
     <a class="skip-link" href="#contenuto">Vai al contenuto</a>
@@ -22,9 +22,9 @@
   </header>
 
   <main id="contenuto" class="container">
-    <section class="intro" aria-labelledby="titolo-programma">
+    <section class="intro" aria-labelledby="titolo-info">
       <p class="eyebrow">12–13 giugno · Torino · Festival immaginario</p>
-      <h1 id="titolo-programma">Info e luoghi</h1>
+      <h1 id="titolo-info">Come arrivare</h1>
       <p class="lead">Tre spazi, tre ambienti per esplorare design e comunicazione visiva.</p>
       <p class="reading-text">Scopri le tre sedi del festival e visita virtualmente gli spazi dove si svolgeranno incontri, laboratori e mostre.</p>
     </section>
@@ -34,34 +34,55 @@
       <div class="swiper">
         <div class="swiper-wrapper">
           <article class="swiper-slide venue-slide">
-            <img src="assets/luoghi/sede-centrale.jpg" alt="Spazio interno di Officina Nord con tavoli e strumenti di lavoro" width="1200" height="600">
+            <img src="assets/luoghi/sede-centrale.jpg" alt="Facciata principale della sede centrale del Politecnico di Torino" width="1200" height="600">
             <div class="venue-info">
               <h3>Sede Centrale</h3>
-              <p class="venue-description">Sede centrale — Corso Duca degli Abruzzi 24 — Officina Nord nel festival immaginario.</p>
+              <p class="venue-description">Corso Duca degli Abruzzi 24 — Officina Nord nel festival immaginario.</p>
             </div>
           </article>
 
           <article class="swiper-slide venue-slide">
-            <img src="assets/luoghi/politecnico-valentino.jpg" alt="Laboratorio Spazio Forma con materiali e tavoli di lavoro" width="1200" height="600">
+            <img src="assets/luoghi/politecnico-valentino.jpg" alt="Facciata con giardino della sede al Valentino del Politecnico di Torino" width="1200" height="600">
             <div class="venue-info">
-              <h3>Politecnico al Valentino</h3>
-              <p class="venue-description">Politecnico al Valentino — Viale Mattioli 39 — Spazio Forma nel festival immaginario.</p>
+              <h3>Sede del Valentino</h3>
+              <p class="venue-description">Viale Mattioli 39 — Spazio Forma nel festival immaginario.</p>
             </div>
           </article>
 
           <article class="swiper-slide venue-slide">
-            <img src="assets/luoghi/mirafiori.jpg" alt="Cortile Comune con installazioni e mostre espositive" width="1200" height="600">
+            <img src="assets/luoghi/mirafiori.jpg" alt="Scorcio della sede di Mirafiori del Politecnico di Torino" width="1200" height="600">
             <div class="venue-info">
               <h3>Sede di Mirafiori</h3>
               <p class="venue-description">Corso Luigi Settembrini 178 — Cortile Comune nel festival immaginario.</p>
             </div>
           </article>
         </div>
-
-        <div class="swiper-button-prev"></div>
-        <div class="swiper-button-next"></div>
-        <div class="swiper-pagination"></div>
+        <div class="swiper-nav">
+          <div class="swiper-button-prev"></div>
+          <div class="swiper-button-next"></div>
+        </div>
+          <div class="swiper-pagination"></div>
       </div>
+    </section>
+    <section class="content-section" aria-labelledby="titolo-mappa">
+      <h2 id="titolo-mappa">Come arrivare</h2>
+
+      <div class="map-embed">
+       <iframe id="mappa-sedi" loading="lazy" 
+       title="Mappa delle tre sedi di riferimento per il festival Segnale a Torino"
+       src="https://umap.openstreetmap.fr/it/map/segnale-sedi-del-festival-immaginario_1479665?scaleControl=false&amp;miniMapControl=false&amp;scrollWheelZoom=false&amp;zoomControl=true&amp;editMode=disabled&amp;moreControl=true&amp;searchControl=null&amp;tilelayersControl=null&amp;embedControl=null&amp;datalayersControl=true&amp;onLoadPanel=none&amp;captionBar=false&amp;captionMenus=true#12/45.0465/7.6528"></iframe>
+        <a href="https://umap.openstreetmap.fr/it/map/segnale-sedi-del-festival-immaginario_1479665?scaleControl=false&amp;miniMapControl=false&amp;scrollWheelZoom=true&amp;zoomControl=true&amp;editMode=disabled&amp;moreControl=true&amp;searchControl=null&amp;tilelayersControl=null&amp;embedControl=null&amp;datalayersControl=true&amp;onLoadPanel=none&amp;captionBar=false&amp;captionMenus=true#12/45.0465/7.6528">Visualizza la mappa a schermo intero</a>
+      </div>
+
+      <h3>Indicazioni per le sedi</h3>
+      <ul class="venues">
+        <li><strong>Sede centrale</strong> — Corso Duca degli Abruzzi 24, Torino.
+          <a href="https://www.google.com/maps/dir/?api=1&amp;destination=Corso+Duca+degli+Abruzzi+24%2C+Torino">Indicazioni per la Sede centrale</a></li>
+        <li><strong>Sede del Valentino</strong> — Viale Mattioli 39, Torino.
+          <a href="https://www.google.com/maps/dir/?api=1&amp;destination=Viale+Mattioli+39%2C+Torino">Indicazioni per la sede del Valentino</a></li>
+        <li><strong>Sede di Mirafiori</strong> — Corso Luigi Settembrini 178, Torino.
+          <a href="https://www.google.com/maps/dir/?api=1&amp;destination=Corso+Luigi+Settembrini+178%2C+Torino">Indicazioni per la Sede di Mirafiori</a></li>
+      </ul>
     </section>
   </main>
 
@@ -70,7 +91,14 @@
   <script src="https://cdn.jsdelivr.net/npm/swiper@14.4.0/swiper-bundle.min.js"></script>
   <script>
     const swiper = new Swiper('.swiper', {
-      loop: true,
+      rewind: true,
+      keyboard: { enabled: true },
+      a11y: {
+        prevSlideMessage: 'Slide precedente',
+        nextSlideMessage: 'Slide successiva',
+        paginationBulletMessage: 'Vai alla slide {{index}}',
+        slideLabelMessage: 'Slide {{index}} di {{slidesLength}}'
+      },
       pagination: {
         el: '.swiper-pagination',
         clickable: true
