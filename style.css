@@ -7,12 +7,16 @@
   --colore-primario-scuro: #7a0c20;
   --colore-sfondo: #f5f2e9;
   --colore-testo: #202923;
-  --font-testo: Tahoma, Helvetica, sans-serif;
-  --font-titoli: Futura, "Times New Roman", serif;
+  --font-testo: "Nunito", "Tahoma", "Helvetica", sans-serif;
+  --font-titoli: "Geist Pixel", "Futura", "Trebuchet MS", sans-serif;
 }
 
 * {
   box-sizing: border-box;
+}
+
+html {
+  scroll-padding-top: 11.5rem;
 }
 
 body {
@@ -44,17 +48,22 @@ a:focus-visible {
 }
 
 .site-header {
-  padding: 1.25rem 0;
+  position: sticky;
+  top: 0;
+  z-index: 100;
+  padding: 0.5rem 0;
+  background: var(--colore-sfondo);
   border-bottom: 4px solid var(--colore-primario);
 }
 
 .brand {
   display: inline-block;
   color: var(--colore-testo);
-  font-size: 1.75rem;
+  font-size: 2.5rem;
   font-weight: bold;
   line-height: 1.2;
   text-decoration: none;
+  font-family: var(--font-titoli);
 }
 
 .brand span {
@@ -65,13 +74,16 @@ a:focus-visible {
 }
 
 nav {
-  margin-top: 1rem;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 0.25rem;
+  margin-top: 0.5rem;
 }
 
 nav a {
   display: inline-block;
-  margin-right: 1rem;
-  padding: 0.25rem 0;
+  padding: 0.125rem 0;
 }
 
 nav a[aria-current="page"] {
@@ -97,18 +109,21 @@ h3 {
 }
 
 h1 {
+font-family: var(--font-titoli);
   max-width: 18ch;
   margin: 0.75rem 0 1.25rem;
-  font-size: 2.5rem;
+  font-size: 4rem;
 }
 
 h2 {
+  font-family: var(--font-titoli);
   font-size: 1.75rem;
 }
 
 h3 {
   margin: 0.5rem 0 0.75rem;
   font-size: 1.375rem;
+  font-family: var(--font-testi);
 }
 
 .lead {
@@ -196,6 +211,7 @@ h3 {
 }
 
 .skip-link {
+  z-index: 200;
   position: absolute;
   top: -6rem;
   left: 1rem;
@@ -212,6 +228,20 @@ h3 {
 @media (min-width: 600px) {
   .event-grid {
     grid-template-columns: repeat(2, 1fr);
+  }
+
+  .site-header {
+    padding: 1.25rem 0;
+  }
+
+  nav {
+    flex-direction: row;
+    flex-wrap: wrap;
+    gap: 0.25rem 1rem;
+  }
+
+  nav a {
+    padding: 0.25rem 0;
   }
 }
 
@@ -330,5 +360,11 @@ h3 {
 @media (min-width: 600px) {
   .map-embed iframe {
     height: 24rem;
+  }
+}
+
+@media (max-height: 480px) {
+  .site-header {
+    position: static;
   }
 }
