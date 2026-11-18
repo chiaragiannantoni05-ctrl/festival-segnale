@@ -3,10 +3,10 @@
 
 /* Scelte comuni: ogni regola usa var() per richiamarne il valore. */
 :root {
-  --colore-primario: #ed1212;
-  --colore-primario-scuro: #b30f0f;
-  --colore-sfondo: #001b27;
-  --colore-testo: #c5ecff;
+  --colore-primario: #02DD8D;
+  --colore-primario-scuro: #01B36D;
+  --colore-sfondo: #000000;
+  --colore-testo: #FFD001;
   --font-testo: "Nunito", "Tahoma", "Helvetica", sans-serif;
   --font-titoli: "Geist Pixel", "Futura", "Trebuchet MS", sans-serif;
 }
@@ -22,7 +22,7 @@ html {
 body {
   margin: 0;
   background: var(--colore-sfondo);
-  color: var(--colore-testo);
+  color: var(--colore-sfondo);
   font-family: var(--font-testo);
   font-size: 1rem;
   line-height: 1.6;
@@ -150,7 +150,7 @@ h3 {
   padding: 0.75rem 1.25rem;
   border-radius: 0.5rem;
   background: var(--colore-primario);
-  color: #ffffff;
+  color: #000000;
   font-weight: bold;
   text-decoration: none;
 }
