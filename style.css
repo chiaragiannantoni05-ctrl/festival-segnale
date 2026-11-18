@@ -6,7 +6,7 @@
   --colore-primario: #02DD8D;
   --colore-primario-scuro: #01B36D;
   --colore-sfondo: #000000;
-  --colore-testo: #FFD001;
+  --colore-testo: #ffd001;
   --font-testo: "Nunito", "Tahoma", "Helvetica", sans-serif;
   --font-titoli: "Geist Pixel", "Futura", "Trebuchet MS", sans-serif;
 }
@@ -22,7 +22,7 @@ html {
 body {
   margin: 0;
   background: var(--colore-sfondo);
-  color: var(--colore-sfondo);
+  color: var(--colore-testo);
   font-family: var(--font-testo);
   font-size: 1rem;
   line-height: 1.6;
