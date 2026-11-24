@@ -91,6 +91,30 @@
           <a href="https://www.google.com/maps/dir/?api=1&amp;destination=Corso+Luigi+Settembrini+178%2C+Torino">Indicazioni per la Sede di Mirafiori</a></li>
       </ul>
     </section>
+    
+      <section class="content-section" aria-labelledby="titolo-meteo">
+      <h2 id="titolo-meteo">Meteo a Torino adesso</h2>
+      <p class="reading-text">Questo è il meteo di oggi a Torino, non la previsione per il 12 e 13 giugno.</p>
+
+      <p id="stato-meteo" class="stato-meteo" role="status">Caricamento del meteo…</p>
+
+      <dl id="dati-meteo" class="meteo" hidden>
+        <div>
+          <dt>Temperatura</dt>
+          <dd id="meteo-temperatura"></dd>
+        </div>
+        <div>
+          <dt>Vento</dt>
+          <dd id="meteo-vento"></dd>
+        </div>
+        <div>
+          <dt>Ora del dato</dt>
+          <dd id="meteo-ora"></dd>
+        </div>
+      </dl>
+
+      <p class="meteo-fonte">Dati meteo: <a href="https://open-meteo.com/">Open-Meteo</a>, licenza <a href="https://creativecommons.org/licenses/by/4.0/">CC BY 4.0</a>.</p>
+    </section>
   </main>
 
   <footer class="site-footer"><div class="container"><p>Segnale · Progetto didattico · Festival immaginario</p></div></footer>
@@ -117,6 +141,46 @@
       slidesPerView: 1,
       spaceBetween: 20
     });
+  </script>
+
+  <script>
+    (async function caricaMeteo() {
+      const URL_METEO =
+        'https://api.open-meteo.com/v1/forecast?latitude=45.0703&longitude=7.6869' +
+        '&current=temperature_2m,wind_speed_10m&timezone=Europe%2FRome';
+
+      const stato = document.getElementById('stato-meteo');
+      const dati = document.getElementById('dati-meteo');
+
+      try {
+        const risposta = await fetch(URL_METEO, { signal: AbortSignal.timeout(8000) });
+        if (!risposta.ok) throw new Error('HTTP ' + risposta.status);
+
+        const json = await risposta.json();
+        const c = json.current;
+        const u = json.current_units;
+        if (!c || typeof c.temperature_2m !== 'number' || typeof c.wind_speed_10m !== 'number') {
+          throw new Error('dati mancanti');
+        }
+
+        const ora = new Date(c.time).toLocaleString('it-IT', {
+          day: 'numeric', month: 'long', hour: '2-digit', minute: '2-digit'
+        });
+
+        document.getElementById('meteo-temperatura').textContent =
+          c.temperature_2m.toLocaleString('it-IT') + ' ' + u.temperature_2m;
+        document.getElementById('meteo-vento').textContent =
+          c.wind_speed_10m.toLocaleString('it-IT') + ' ' + u.wind_speed_10m;
+        document.getElementById('meteo-ora').textContent = ora + ' (ora italiana)';
+
+        stato.hidden = true;
+        dati.hidden = false;
+      } catch (errore) {
+        stato.textContent =
+          'Non riesco a mostrare il meteo in questo momento. Il resto della pagina funziona normalmente.';
+        stato.setAttribute('role', 'alert');
+      }
+    })();
   </script>
 
 </body>

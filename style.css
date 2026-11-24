@@ -378,9 +378,44 @@ h3 {
   }
 }
 
-.stato-eventi {
+.stato-eventi,
+.stato-meteo {
   max-width: 65ch;
   padding-left: 1rem;
   border-left: 4px solid var(--colore-primario);
+}
+
+.meteo {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(10rem, 1fr));
+  gap: 1rem;
+  max-width: 54rem;
+  margin: 1.25rem 0;
+}
+
+.meteo[hidden] {
+  display: none;
+}
+
+.meteo div {
+  padding: 1rem;
+  border: 2px solid var(--colore-primario);
+  border-radius: 0.75rem;
+}
+
+.meteo dt {
+  color: var(--colore-primario);
+  font-size: 0.875rem;
+  font-weight: bold;
+}
+
+.meteo dd {
+  margin: 0;
+  font-family: var(--font-titoli);
+  font-size: 1.5rem;
+}
+
+.meteo-fonte {
+  font-size: 0.875rem;
 }
 /* 
