@@ -377,4 +377,10 @@ h3 {
     position: static;
   }
 }
+
+.stato-eventi {
+  max-width: 65ch;
+  padding-left: 1rem;
+  border-left: 4px solid var(--colore-primario);
+}
 /* 
